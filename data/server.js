@@ -41,9 +41,12 @@ app.get("/view", function(req, res) {
     res.sendFile(path.join(__dirname, "view.html"));
     });
 
-// post to list
+// Displays all table json
+app.get("/api/customers", function(req, res) {
+  return res.json(customers);
+});
 
-// Create new reservation
+// post to list
 app.post("/api/customers", function(req, res) {
    // req.body hosts is equal to the JSON post sent from the user ??
   // This works because of our body parsing middleware ***********??
