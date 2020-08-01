@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="jumbotron">
+      <h1 class="text-center"><span class="fa fa-fire"></span> Blue Dish</h1>
+      <hr>
+      <h2 class="text-center">Reservations and Waiting</h2>
+      <br>
+
+      <div class="text-center">
+        <a href="/reserve"><button class="btn btn-lg btn-danger"><span class="fa fa-credit-card"></span> Make Reservation</button></a>
+        <a href="/home"><button class="btn btn-lg btn-danger"><span class="fa fa-credit-card"></span> Home </button></a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+<!-- FROM STARWARS APP *modifying to match our needs* -->
+        <div class="card mb-4">
+          <div class="card-header">
+            <h3><strong>Tables</strong></h3>
+          </div>
+          <div class="card-body">
+            <input type="text" id="character-search" class="form-control">
+            <br>
+            <div class="text-right">
+              <button type="submit" class="btn btn-primary btn-md" id="search-btn"><span
+                  class="fa fa-search"></span> Search
+                Your Feelings. You know it is true.</button>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h3><strong>Reservations</strong></h3>
+          </div>
+          <div class="card-body">
+            <h2 id="name">Yoda</h2>
+            <div id="stats">
+              <h3><strong>ID:</strong> <span id="role">Jedi Master</span></h3>
+              <h3><strong>Email:</strong> <span id="age">900</span></h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+</body>
+</html>
