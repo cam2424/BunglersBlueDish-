@@ -67,7 +67,7 @@ app.post("/api/tables", function(req, res) {
   newTable.routeName = newTable.id.replace(/\s+/g, "").toLowerCase();
 
   console.log(newTable);
-  customers.push(newTable);
+  tables.push(newTable);
   res.json(newTable);
 })
   
@@ -80,7 +80,7 @@ app.post("/api/reservations", function(req, res) {
   newReservation.routeName = newReservation.id.replace(/\s+/g, "").toLowerCase();
 
   console.log(newReservation);
-  customers.push(newReservation);
+  reservations.push(newReservation);
   res.json(newReservation);
 })
 
