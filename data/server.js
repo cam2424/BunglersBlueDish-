@@ -15,16 +15,24 @@ app.use(express.json());
 // Empty Arrays for Tables and Waiting List
 // =============================================================
 const tables = [
-    {
-        id: "",
-        name: "",
-        email: "",
-        phone: ""
-    }
+  {
+      id: "1",
+      name: "Jess",
+      email: "email@me.com",
+      phone: "801-555-5555"
+  }
 ];
-const waitlist = [];
-const reservations = [];
+const reservations = [
+  {
+    id: "2",
+    name: "Anali",
+    email: "email2@me.com",
+    phone: "801-444-4444"
+}
+];
 
+// Routes
+// =============================================================
 // Basic route that sends the user first to the AJAX Page
 app.get("/", function(req, res) {
     res.sendFile(path.join(__dirname, "home.html"));
@@ -32,14 +40,49 @@ app.get("/", function(req, res) {
   
 // Basic route that sends the user first to the make reservation Page
 app.get("/reservations", function(req, res) {
-    res.sendFile(path.join(__dirname, "make.html"));
+    res.sendFile(path.join(__dirname, "reserve.html"));
   });
 
-// Displays tables
-app.get("/view", function(req, res) {
-    res.sendFile(path.join(__dirname, "view.html"));
+// Displays tables and reservations
+app.get("/tables", function(req, res) {
+    res.sendFile(path.join(__dirname, "tables.html"));
     });
+
+// Displays all table json
+app.get("/api/tables", function(req, res) {
+  return res.json(tables);
+});
+// Displays all reservations json
+app.get("/api/reservations", function(req, res) {
+  return res.json(reservations);
+});
+
+// post to list
+app.post("/api/tables", function(req, res) {
+  // req.body hosts is equal to the JSON post sent from the user ??
+  // This works because of our body parsing middleware ***********??
+  let newTable = req.body;
   
+  // Using a RegEx Pattern to remove spaces from newTable
+  newTable.routeName = newTable.id.replace(/\s+/g, "").toLowerCase();
+
+  console.log(newTable);
+  customers.push(newTable);
+  res.json(newTable);
+})
+  
+app.post("/api/reservations", function(req, res) {
+  // req.body hosts is equal to the JSON post sent from the user ??
+  // This works because of our body parsing middleware ***********??
+  let newReservation = req.body;
+  
+  // Using a RegEx Pattern to remove spaces from newTable
+  newReservation.routeName = newReservation.id.replace(/\s+/g, "").toLowerCase();
+
+  console.log(newReservation);
+  customers.push(newReservation);
+  res.json(newReservation);
+})
 
 // Starts the server to begin listening
 // =============================================================
