@@ -35,17 +35,17 @@ const reservations = [
 // =============================================================
 // Basic route that sends the user first to the AJAX Page
 app.get("/", function(req, res) {
-    res.sendFile(path.join(__dirname, "home.html"));
+    res.sendFile(path.join(__dirname, "../public/home.html"));
   });
   
 // Basic route that sends the user first to the make reservation Page
 app.get("/reservations", function(req, res) {
-    res.sendFile(path.join(__dirname, "reserve.html"));
+    res.sendFile(path.join(__dirname, "../public/reserve.html"));
   });
 
 // Displays tables and reservations
 app.get("/tables", function(req, res) {
-    res.sendFile(path.join(__dirname, "tables.html"));
+    res.sendFile(path.join(__dirname, "../public/tables.html"));
     });
 
 // Displays all table json
