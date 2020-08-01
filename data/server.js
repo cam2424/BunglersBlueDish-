@@ -14,7 +14,14 @@ app.use(express.json());
 
 // Empty Arrays for Tables and Waiting List
 // =============================================================
-const tables = [];
+const tables = [
+    {
+        id: "",
+        name: "",
+        email: "",
+        phone: ""
+    }
+];
 const waitlist = [];
 const reservations = [];
 
@@ -33,3 +40,9 @@ app.get("/view", function(req, res) {
     res.sendFile(path.join(__dirname, "view.html"));
     });
   
+
+// Starts the server to begin listening
+// =============================================================
+app.listen(PORT, function() {
+    console.log("App listening on PORT " + PORT);
+  });
