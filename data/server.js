@@ -16,18 +16,18 @@ app.use(express.json());
 // =============================================================
 const tables = [
   {
-      id: "",
-      name: "",
-      email: "",
-      phone: ""
+      id: "1",
+      name: "Jess",
+      email: "email@me.com",
+      phone: "801-555-5555"
   }
 ];
 const reservations = [
   {
-    id: "",
-    name: "",
-    email: "",
-    phone: ""
+    id: "2",
+    name: "Anali",
+    email: "email2@me.com",
+    phone: "801-444-4444"
 }
 ];
 
