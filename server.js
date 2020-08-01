@@ -24,7 +24,7 @@ app.get("/", function(req, res) {
   });
   
 // Basic route that sends the user first to the make reservation Page
-app.get("/makereservation", function(req, res) {
+app.get("/reservations", function(req, res) {
     res.sendFile(path.join(__dirname, "make.html"));
   });
 
