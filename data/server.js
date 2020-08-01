@@ -40,12 +40,12 @@ app.get("/", function(req, res) {
   
 // Basic route that sends the user first to the make reservation Page
 app.get("/reservations", function(req, res) {
-    res.sendFile(path.join(__dirname, "make.html"));
+    res.sendFile(path.join(__dirname, "reserve.html"));
   });
 
 // Displays tables and reservations
-app.get("/view", function(req, res) {
-    res.sendFile(path.join(__dirname, "view.html"));
+app.get("/tables", function(req, res) {
+    res.sendFile(path.join(__dirname, "tables.html"));
     });
 
 // Displays all table json
