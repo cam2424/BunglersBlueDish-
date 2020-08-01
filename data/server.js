@@ -14,15 +14,22 @@ app.use(express.json());
 
 // Empty Arrays for Tables and Waiting List
 // =============================================================
-const customers = [
-    {
-        id: "",
-        name: "",
-        email: "",
-        phone: ""
-    }
+const tables = [
+  {
+      id: "",
+      name: "",
+      email: "",
+      phone: ""
+  }
 ];
-const waitlist = [];
+const reservations = [
+  {
+    id: "",
+    name: "",
+    email: "",
+    phone: ""
+}
+];
 
 // Routes
 // =============================================================
@@ -42,26 +49,40 @@ app.get("/view", function(req, res) {
     });
 
 // Displays all table json
-app.get("/api/customers", function(req, res) {
-  return res.json(customers);
+app.get("/api/tables", function(req, res) {
+  return res.json(tables);
+});
+// Displays all reservations json
+app.get("/api/reservations", function(req, res) {
+  return res.json(reservations);
 });
 
 // post to list
-app.post("/api/customers", function(req, res) {
-   // req.body hosts is equal to the JSON post sent from the user ??
+app.post("/api/tables", function(req, res) {
+  // req.body hosts is equal to the JSON post sent from the user ??
   // This works because of our body parsing middleware ***********??
-  let newCustomer = req.body;
+  let newTable = req.body;
   
-  // Using a RegEx Pattern to remove spaces from newCharacter
-  // You can read more about RegEx Patterns later https://www.regexbuddy.com/regex.html
-  newCustomer.routeName = newCustomer.id.replace(/\s+/g, "").toLowerCase();
+  // Using a RegEx Pattern to remove spaces from newTable
+  newTable.routeName = newTable.id.replace(/\s+/g, "").toLowerCase();
 
-  console.log(newCustomer);
-  customers.push(newCustomer);
-  res.json(newCustomer);
-
+  console.log(newTable);
+  customers.push(newTable);
+  res.json(newTable);
 })
   
+app.post("/api/reservations", function(req, res) {
+  // req.body hosts is equal to the JSON post sent from the user ??
+  // This works because of our body parsing middleware ***********??
+  let newReservation = req.body;
+  
+  // Using a RegEx Pattern to remove spaces from newTable
+  newReservation.routeName = newReservation.id.replace(/\s+/g, "").toLowerCase();
+
+  console.log(newReservation);
+  customers.push(newReservation);
+  res.json(newReservation);
+})
 
 // Starts the server to begin listening
 // =============================================================
